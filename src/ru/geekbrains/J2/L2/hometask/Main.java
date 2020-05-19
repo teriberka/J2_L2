@@ -23,7 +23,7 @@ package ru.geekbrains.J2.L2.hometask;
 
 public class Main {
     public static void main(String[] args){
-        String inputString = "10 3 1 2\n2 3 2 2\n5 6 7 1\n300 3 1 0";
+        String inputString = "10 3 1 2\n2 3 2 2\n5 6 7 1\n300 3 1 test";
 
         String[][] stringArray;
         int[][] intArray;
@@ -75,7 +75,17 @@ public class Main {
 
         for (int i = 0; i < incomeArray.length; i++){
             for(int j = 0; j < incomeArray.length; j++){
-                resultArray[i][j] = Integer.parseInt(incomeArray[i][j].trim());
+//                resultArray[i][j] = Integer.parseInt(incomeArray[i][j].trim());
+                try
+                {
+                    resultArray[i][j] = Integer.parseInt(incomeArray[i][j].trim());
+                }
+                catch (NumberFormatException nfe)
+                {
+                    System.out.println("Мы не смогли перевести строку в число!");
+                    System.out.println("В данном значении массива хранится строка: " + incomeArray[i][j]);
+                }
+
             }
         }
 
