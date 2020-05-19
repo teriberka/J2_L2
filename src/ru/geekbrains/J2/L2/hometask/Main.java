@@ -50,7 +50,7 @@ public class Main {
 //            System.out.println(subArray1[i]);
             subArray2 = subArray1[i].split(" ");
 
-            if (subArray1.length != 4) throw new FourToFourCountException("Размер матрицы не 4x4", subArray1.length, subArray2.length);
+            if (subArray1.length != 4 || subArray2.length != 4) throw new FourToFourCountException("Размер матрицы не 4x4", subArray1.length, subArray2.length);
 
             for (int j = 0; j < subArray2.length; j++) {
 //                System.out.println(subArray2[j]);
