@@ -25,10 +25,13 @@ public class Main {
     public static void main(String[] args){
         String inputString = "10 3 1 2\n2 3 2 2\n5 6 7 1\n300 3 1 0";
 
-        String[][] someArray;
+        String[][] stringArray;
+        int[][] intArray;
 
-        someArray = parseString(inputString);
-        printArray(someArray);
+        stringArray = parseString(inputString);
+        printArray(stringArray);
+
+        intArray = changeArray(stringArray);
 
     }
 
@@ -62,6 +65,21 @@ public class Main {
             }
             System.out.println(" ");
         }
+    }
+
+
+    public static int[][] changeArray(String[][] incomeArray){
+        int n = incomeArray.length;
+        int[][] resultArray = new int[n][n];
+
+        for (int i = 0; i < incomeArray.length; i++){
+            for(int j = 0; j < incomeArray.length; j++){
+
+                resultArray[i][j] = 1;
+            }
+        }
+
+        return resultArray;
     }
 
 }
