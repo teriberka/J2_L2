@@ -75,8 +75,7 @@ public class Main {
 
         for (int i = 0; i < incomeArray.length; i++){
             for(int j = 0; j < incomeArray.length; j++){
-
-                resultArray[i][j] = 1;
+                resultArray[i][j] = Integer.parseInt(incomeArray[i][j].trim());
             }
         }
 
