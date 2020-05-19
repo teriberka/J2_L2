@@ -33,6 +33,7 @@ public class Main {
 
         intArray = changeArray(stringArray);
 
+        System.out.println("sum = " + countSum(intArray));
     }
 
     public static String[][] parseString(String inputString) {
@@ -82,4 +83,14 @@ public class Main {
         return resultArray;
     }
 
+    public static int countSum(int[][] incomeArray){
+        int sum = 0;
+
+        for (int i=0; i < incomeArray.length; i++){
+            for (int j=0; j< incomeArray.length; j++){
+                sum = sum + incomeArray[i][j];
+            }
+        }
+        return sum / 2;
+    }
 }
