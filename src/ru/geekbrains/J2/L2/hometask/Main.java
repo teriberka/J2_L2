@@ -49,6 +49,9 @@ public class Main {
         for (int i = 0; i < subArray1.length; i++) {
 //            System.out.println(subArray1[i]);
             subArray2 = subArray1[i].split(" ");
+
+            if (subArray1.length != 4) throw new FourToFourCountException("Размер матрицы не 4x4", subArray1.length, subArray2.length);
+
             for (int j = 0; j < subArray2.length; j++) {
 //                System.out.println(subArray2[j]);
                 resultArray[i][j] = subArray2[j];
@@ -101,5 +104,18 @@ public class Main {
             }
         }
         return sum / 2;
+    }
+}
+
+class FourToFourCountException extends Exception{
+    private int num1;
+    private int num2;
+
+    public String getInfo(){return "по оси х = " + num1 + "по оси y = " + num2;}
+
+    public FourToFourCountException(String message, int i, int j){
+        super(message);
+        num1=i;
+        num2=j;
     }
 }
